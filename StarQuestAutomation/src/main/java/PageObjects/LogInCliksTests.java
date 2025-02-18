@@ -9,7 +9,9 @@ public class LogInCliksTests {
 	
 	}
 	
-	
+	public static void kkk (LoginPage logpage) {
+		logpage.click(logpage.getLogIn_btn());
+	}
 	public static void RevelPassword(LoginPage logpage) {
 		logpage.getSeePassword().click();//see password
 	

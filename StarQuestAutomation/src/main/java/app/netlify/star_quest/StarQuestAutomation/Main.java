@@ -5,18 +5,25 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
+import PageObjects.Constants;
 import PageObjects.Dashboard;
 import PageObjects.Dashboard_Tests;
 import PageObjects.Email;
+import PageObjects.Fill_Report;
 import PageObjects.Forgot_Password_Page;
 import PageObjects.LogInCliksTests;
 import PageObjects.LoginPage;
 import PageObjects.Name;
+import PageObjects.Navigation;
 import PageObjects.Open_Page_Runs;
 import PageObjects.Password;
+import PageObjects.Report_Test;
 import PageObjects.Report_Tests;
+import PageObjects.Reports;
 import PageObjects.SignUpPage;
+import java.util.*;
 
 public class Main {
 
@@ -30,7 +37,7 @@ public class Main {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
 	}
 
-
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -38,33 +45,33 @@ public class Main {
 		Email mail = new Email(driver);
 		Password password = new Password(driver);
 		Name name =new Name (driver); 
+		Constants constant= new Constants();
 		
-		Open_Page_Runs runs = new Open_Page_Runs(driver);
+		 Scanner input = new Scanner(System.in);
+		 
+		Open_Page_Runs runs = new Open_Page_Runs(driver,input);
 		
-		
+		Actions actions = new Actions(driver);
 		
 		
 		
 		
 		//		tests for LoginPage
-		OpenSystem(driver, "https://starquest-five.vercel.app/");
+		OpenSystem(driver, constant.getURL());
 
 		LoginPage logpage = new LoginPage(driver);
 		LogInCliksTests logtests = new LogInCliksTests(driver);
 	
-		runs.LoginTests(mail, password, logpage, logtests);
+		runs.LoginTests(mail, password, logpage, logtests,constant);
 																// Log in to system
-		
-		
-		
-		
+
 		
 		Forgot_Password_Page fpp= new Forgot_Password_Page(driver);
 //		runs.Forgot_Password_Tests(mail, logpage, logtests, fpp);
 															// reset password tests
 
 		
-//		TimeOut(driver, 2);
+		TimeOut(driver, 2);
 //		tests.ClickVerification(logpage);
 //		TimeOut(driver, 2);
 //		tests.ClickSignUp_btn(logpage);
@@ -79,28 +86,28 @@ public class Main {
 																	//		tests for SignupPage
 
 		
-		
+		TimeOut(driver, 2);
 		Dashboard dashboard = new Dashboard(driver);
 		boolean flag=false;
 		Dashboard_Tests dashtests= new Dashboard_Tests(flag,driver);
+		Navigation navigation = new Navigation( driver,  dashboard,  dashtests, constant);
+		navigation.navigate_In_ToolBar();
+
+		TimeOut(driver, 2);
+		TimeOut(driver, 2);
+		TimeOut(driver, 2);
+
+
 		
-		dashtests.Open_Close_Toolbar(dashboard);
-		TimeOut(driver, 2);
-		TimeOut(driver, 2);
-		TimeOut(driver, 2);
-//		dashtests.Open_Close_Toolbar(dashboard);
-//		dashtests.Go_To_LeaderBoard(dashboard);
-//		dashtests.Go_To_Quest(dashboard);
-		dashtests.Go_To_Reports(dashboard);
-//		dashtests.Go_To_Roadmap(dashboard);
-//		dashtests.Go_To_Settings(dashboard);
-//		dashtests.Loagout(dashboard);
-		dashtests.Open_Close_Toolbar(dashboard);
-//		Report_Tests Rtests= new Report_Tests(driver);
-//		Rtests.Create_and_fill_daily_report();
 //		
+		Reports reports= new Reports(driver);
+		Report_Test Rtest= new Report_Test(driver,reports, actions);
+		Fill_Report Freport = new Fill_Report(driver, reports,Rtest, actions);
+		Freport.Fill_Daily();
+		Freport.Fill_Weekly();
+		Freport.Fill_End();
 
-
+		
 	}
 
 }

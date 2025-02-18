@@ -41,6 +41,22 @@ public class Dashboard_Tests {
 
 	}
 
+	public static void Go_To_AdminInvite(Dashboard dashboard) {
+		dashboard.getAdminInvite().click();
+
+	}
+	public static void Go_To_Backlog(Dashboard dashboard) {
+		dashboard.getBacklog().click();
+
+	}
+	public static void Go_To_MenteesOverview(Dashboard dashboard) {
+		dashboard.getMenteesOverview().click();
+
+	}
+	public static void Go_To_AdminPosition(Dashboard dashboard) {
+		dashboard.getAdminPosition().click();
+
+	}
 	public static void Go_To_LeaderBoard(Dashboard dashboard) {
 		dashboard.getLeaderBoard().click();
 

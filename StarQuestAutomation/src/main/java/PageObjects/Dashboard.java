@@ -12,16 +12,23 @@ public class Dashboard {
 	}
 
 	By Toolbar = By.cssSelector(
-			"[class='css-7o7auk'] [tabindex]");
+			".MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.css-dics6c");
 	By DashboardPage = By.cssSelector("[href='\\/']");
-	By Reports = By.cssSelector("[href='\\/daily-reports']");
+//	By Reports = By.cssSelector("ul:nth-of-type(1) > li:nth-of-type(2)");
+	By Reports =By.linkText("Reports");
 	By Quest = By.cssSelector("[href='\\/user-quest']");
 	By Roadmap = By.cssSelector(
 			"[href='\\/user-quest']");
 	By LeaderBoard = By.cssSelector(
 			"[href='\\/leaderboard']");
+	
+	By AdminInvite = By.cssSelector("[href='\\/admin-invite']");
+	By Backlog = By.cssSelector("[href='\\/Admin-backlog'] .MuiListItemText-primary");
+	By MenteesOverview = By.cssSelector("[href='\\/MenteesOverview'] .MuiListItemText-primary");
+	By AdminPosition = By.cssSelector("[href='\\/admin-position'] .MuiListItemText-primary");
+	
 	By Settings = By.cssSelector(
-			"ul:nth-of-type(2) > li:nth-of-type(1) > div[role='button']  .MuiListItemText-primary.MuiTypography-body1.MuiTypography-root.css-yb0lig");
+			"[href='\\/user-profile']");
 	By Logout = By.cssSelector(
 			"ul:nth-of-type(2) > li:nth-of-type(2)");
 
@@ -50,7 +57,16 @@ public class Dashboard {
 	public WebElement getLogout() {
 		return driver.findElement(Logout);
 	}
-	
+	public WebElement getAdminInvite() {
+		return driver.findElement(AdminInvite);
+	}
+	public WebElement getBacklog() {
+		return driver.findElement(Backlog);
+	}public WebElement getMenteesOverview() {
+		return driver.findElement(MenteesOverview);
+	}public WebElement getAdminPosition() {
+		return driver.findElement(AdminPosition);
+	}
 	
 	
 	

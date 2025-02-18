@@ -34,11 +34,11 @@ public class DaylyReportsTests {
 			System.out.println("cant");
 	}
 
-	public static void Rate_Fillings(boolean inreportflag, Daily_Report DReport, int num) {
-		Check_if_you_can_access(inreportflag, DReport);
-		Filling_cases(DReport, num);
-
-	}
+//	public static void Rate_Fillings(boolean inreportflag, Daily_Report DReport, int num) {
+//		Check_if_you_can_access(inreportflag, DReport);
+//		Filling_cases(DReport, num);
+//
+//	}
 
 	public static void Filling_cases(Daily_Report DReport, int num) { // rate cases
 			if(num == 1) {

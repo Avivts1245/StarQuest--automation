@@ -24,6 +24,11 @@ public class WebPage {
 	public WebElement getPassword() {
 		return driver.findElement(password);
 	}
-
+	public static void click(WebElement element) {
+		element.click();
+	}
+	public static void send_keys(WebElement element, String str) {
+		element.sendKeys(str);
+	}
 	
 }
