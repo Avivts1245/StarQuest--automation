@@ -84,9 +84,10 @@ public class Main {
 		SignUpPage signpage = new SignUpPage(driver);
 //		runs.SignUp_Tests(mail, password, logpage, logtests, signpage, name);
 																	//		tests for SignupPage
-
-		
 		TimeOut(driver, 2);
+		TimeOut(driver, 2);
+		TimeOut(driver, 2);
+		
 		Dashboard dashboard = new Dashboard(driver);
 		boolean flag=false;
 		Dashboard_Tests dashtests= new Dashboard_Tests(flag,driver);
