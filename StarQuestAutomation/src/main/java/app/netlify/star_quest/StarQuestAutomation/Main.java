@@ -59,31 +59,31 @@ public class Main {
 		//		tests for LoginPage
 		OpenSystem(driver, constant.getURL());
 
-		LoginPage logpage = new LoginPage(driver);
-		LogInCliksTests logtests = new LogInCliksTests(driver);
-	
-		runs.LoginTests(mail, password, logpage, logtests,constant);
-																// Log in to system
-
-		
-		Forgot_Password_Page fpp= new Forgot_Password_Page(driver);
-//		runs.Forgot_Password_Tests(mail, logpage, logtests, fpp);
-															// reset password tests
-
-		
-		TimeOut(driver, 2);
-//		tests.ClickVerification(logpage);
+//		LoginPage logpage = new LoginPage(driver);
+//		LogInCliksTests logtests = new LogInCliksTests(driver);
+//
+//		runs.LoginTests(mail, password, logpage, logtests,constant);
+//																// Log in to system
+//
+//
+//		Forgot_Password_Page fpp= new Forgot_Password_Page(driver);
+////		runs.Forgot_Password_Tests(mail, logpage, logtests, fpp);
+//															// reset password tests
+//
+//
 //		TimeOut(driver, 2);
-//		tests.ClickSignUp_btn(logpage);
-//		TimeOut(driver, 2);
-
-		
-		
-		
-												
-		SignUpPage signpage = new SignUpPage(driver);
-//		runs.SignUp_Tests(mail, password, logpage, logtests, signpage, name);
-																	//		tests for SignupPage
+////		tests.ClickVerification(logpage);
+////		TimeOut(driver, 2);
+////		tests.ClickSignUp_btn(logpage);
+////		TimeOut(driver, 2);
+//
+//
+//
+//
+//
+//		SignUpPage signpage = new SignUpPage(driver);
+////		runs.SignUp_Tests(mail, password, logpage, logtests, signpage, name);
+//																	//		tests for SignupPage
 		TimeOut(driver, 2);
 		TimeOut(driver, 2);
 		TimeOut(driver, 2);
@@ -97,7 +97,7 @@ public class Main {
 		TimeOut(driver, 2);
 		TimeOut(driver, 2);
 		TimeOut(driver, 2);
-			
+
 
 		
 //		
